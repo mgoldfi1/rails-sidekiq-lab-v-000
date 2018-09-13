@@ -4,8 +4,8 @@ class SongsWorker
 
 
   def perform(songs_file)
-    CSV.foreach(leads_file, headers: true) do |lead|
-      Customer.create(email: lead[0], first_name: lead[1], last_name: lead[2])
+    CSV.foreach(songs_file, headers: true) do |song|
+      Customer.create(email: song[0], first_name: song[1], last_name: song[2])
     end
   end
 end
